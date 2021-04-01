@@ -1,0 +1,40 @@
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+a{
+  text-decoration: none;
+  margin-right: 15px;
+}
+.toolbar-firts{
+  padding-top: 20px;
+}
+
+.toolbar-firts a{
+  color: #c2185b;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toolbar-firts a .mat-icon{
+  margin-right: 5px;
+}
+
+.search{
+  display: flex;
+  width: 25%;
+}
+
+.search input{
+  width: 80%;
+height: 30px;
+margin-top: 1px;
+border-radius: 8px 0 0 8px;
+}
+
+.mat-toolbar-row{
+  height: 40px;
+}

@@ -1,0 +1,23 @@
+<div class="card-container">
+  <mat-card class="card">
+    <mat-card-title>
+      Login
+    </mat-card-title>
+    <form>
+      <p>
+        <mat-form-field appearance="standard" class="full-width pb-20">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="email@example.com" required/>
+        </mat-form-field>
+
+      </p>
+      <p>
+        <mat-form-field appearance="standard" class="full-width pb-20">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="password" required/>
+        </mat-form-field>
+      </p>
+      <button mat-raised-button color="primary" (click)="Login()" class="full-width">Login</button>
+    </form>
+  </mat-card>
+</div>

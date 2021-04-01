@@ -1,0 +1,29 @@
+<mat-toolbar>
+  <mat-toolbar-row class="toolbar-firts">
+    <a routerLink="/home" color="primary">
+      <mat-icon>home</mat-icon> Home
+    </a>
+    <a>
+      <mat-icon>tv</mat-icon> TV-shows
+    </a>
+    <a [matMenuTriggerFor]="movies">
+      <mat-icon>movie</mat-icon> Movies
+    </a>
+    <mat-menu #movies="matMenu">
+      <a mat-menu-item routerLink="/movies/populars">Populars</a>
+      <a mat-menu-item routerLink="/movies/nowplaying">Now Playing</a>
+      <a mat-menu-item routerLink="/movies/upcoming">Upcoming</a>
+      <a mat-menu-item routerLink="/movies/toprated">Top Rated</a>
+    </mat-menu>
+    <a>
+      <mat-icon>list</mat-icon> Genders
+    </a>
+
+     <span class="spacer"></span>
+     <div class="search">
+      <input type="text" placeholder="search..." />
+      <button mat-raised-button><mat-icon>search</mat-icon></button>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
