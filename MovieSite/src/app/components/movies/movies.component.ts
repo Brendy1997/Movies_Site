@@ -36,7 +36,8 @@ export class MoviesComponent implements OnInit {
     switch(this.tipo){
       case 'populars':{
         this.isLoadingResults=true;
-        this.movieSvc.getPopularMovies(page).subscribe((res)=>{
+        let sub = this.movieSvc.getPopularMovies(page).subscribe((res)=>{
+          sub.unsubscribe();
           this.movieList= res.results;
           this.isLoadingResults=false;
           this.resultsLength= res.total_results;
@@ -44,7 +45,8 @@ export class MoviesComponent implements OnInit {
         break;
       }
       case 'upcoming':{
-        this.movieSvc.getUpcoming(page).subscribe((res)=>{
+        let sub = this.movieSvc.getUpcoming(page).subscribe((res)=>{
+          sub.unsubscribe();
           this.movieList= res.results;
           this.isLoadingResults=false;
           this.resultsLength= res.total_results;
@@ -52,7 +54,8 @@ export class MoviesComponent implements OnInit {
         break;
       }
       case 'toprated':{
-        this.movieSvc.getTopRated(page).subscribe((res)=>{
+        let sub = this.movieSvc.getTopRated(page).subscribe((res)=>{
+          sub.unsubscribe();
           this.movieList= res.results;
           this.isLoadingResults=false;
           this.resultsLength= res.total_results;
@@ -60,7 +63,8 @@ export class MoviesComponent implements OnInit {
         break;
       }
       case 'nowplaying':{
-        this.movieSvc.getNowPlaying(page).subscribe((res)=>{
+        let sub = this.movieSvc.getNowPlaying(page).subscribe((res)=>{
+          sub.unsubscribe();
           this.movieList= res.results;
           this.isLoadingResults=false;
           this.resultsLength= res.total_results;

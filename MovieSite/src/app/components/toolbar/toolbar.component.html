@@ -15,9 +15,13 @@
       <a mat-menu-item routerLink="/movies/upcoming">Upcoming</a>
       <a mat-menu-item routerLink="/movies/toprated">Top Rated</a>
     </mat-menu>
-    <a>
-      <mat-icon>list</mat-icon> Genders
+    <a [matMenuTriggerFor]="genre">
+      <mat-icon>list</mat-icon> Genres
     </a>
+    <mat-menu #genre="matMenu">
+        <button mat-menu-item *ngFor="let gen of genres" routerLink="/movies/{{gen.id}}">{{gen.name}}</button>
+    </mat-menu>
+
 
      <span class="spacer"></span>
      <div class="search">

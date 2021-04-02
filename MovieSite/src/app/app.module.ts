@@ -14,6 +14,9 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieSingleComponent } from './components/movie-single/movie-single.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { MovieSingleComponent } from './components/movie-single/movie-single.com
     BrowserAnimationsModule,
     MaterialModule,
     UserModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCarouselModule,
+    SlickCarouselModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

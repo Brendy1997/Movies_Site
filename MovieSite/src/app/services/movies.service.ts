@@ -2,6 +2,7 @@ import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Genre } from '../class/genre';
 import { Movie } from '../class/movie';
 import { Moviearray } from '../class/moviearray';
 
@@ -27,5 +28,15 @@ export class MoviesService {
    getTopRated(page: number): Observable<Moviearray>{
     const opts = { params: new HttpParams({fromString: 'api_key=c128aa2170b19b126c3e82f424296617&page='+page}) };
     return this.http.get<Moviearray>(environment.endpoints.baseUrl+environment.endpoints.toprated,opts);
+   }
+
+   getGenre(): Observable<any>{
+    const opts = { params: new HttpParams({fromString: 'api_key=c128aa2170b19b126c3e82f424296617'}) };
+    return this.http.get<any>(environment.endpoints.baseUrl+environment.endpoints.genre,opts);
+   }
+
+   getMovieId(id:string): Observable<Movie>{
+    const opts = { params: new HttpParams({fromString: 'api_key=c128aa2170b19b126c3e82f424296617'}) };
+    return this.http.get<any>(environment.endpoints.baseUrl+environment.endpoints.movie+id,opts);
    }
 }

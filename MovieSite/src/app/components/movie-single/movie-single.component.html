@@ -1,1 +1,17 @@
-<p>movie-single works!</p>
+<section class="container">
+  <div class="movie-cont width-80">
+    <div class="img" >
+      <img src="https://image.tmdb.org/t/p/w780{{peli.poster_path}}" width="100%"/>
+    </div>
+    <div class="info">
+      <h1>{{peli.title}}({{peli.release_date.getFullYear}})</h1>
+      {{peli.release_date}}
+      <p>{{peli.overview}}</p>
+      <div class="d-flex">
+        <div *ngFor="let g of peli.genres">{{g.name}} </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

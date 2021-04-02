@@ -13,6 +13,8 @@ export const environment = {
     nowplaying: 'movie/now_playing',
     toprated: 'movie/top_rated',
     upcoming: 'movie/upcoming',
+    genre: 'genre/movie/list',
+    movie: 'movie/',
 
   }
 };

@@ -1,11 +1,80 @@
-<mat-paginator [length] = "100"
-   [pageSize] = "10"
-   [pageSizeOptions] = "[5, 10, 25, 100]"
-   (page) = "pageEvent = PaginatorEvent($event)">
-</mat-paginator>
-<div *ngIf = "pageEvent">
-   <h5>Page Change Event</h5>
-   <div>List length: {{pageEvent.length}}</div>
-   <div>Page size: {{pageEvent.pageSize}}</div>
-   <div>Page index: {{pageEvent.pageIndex}}</div>
-</div>
+<section class="container">
+  <div class="width-80">
+    <div class="carrusel-cont">
+      <ngx-slick-carousel class="carousel"
+                            #slickModal="slick-carousel"
+                            [config]="slideConfig"
+                            >
+            <div ngxSlickItem *ngFor="let movie of popularmovies" class="slide">
+              <div class="baner" [style.background-image]="'url(https://image.tmdb.org/t/p/w780'+movie.backdrop_path+')'">
+                <div>
+
+                </div>
+                <div class="info">
+                  <h1>{{movie.title}}</h1>
+                  <p>{{movie.overview}}</p>
+                </div>
+              </div>
+            </div>
+      </ngx-slick-carousel>
+
+  </div>
+
+  <div class="carrusel-popular">
+    <h1 style="font-weight: 600;">Popular Movies</h1>
+    <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="slideConfig1"
+                          >
+          <div ngxSlickItem *ngFor="let movie of popularmovies" class="slide">
+            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.backdrop_path}}" width="90%" height="230px"/>
+            <div class="movie-title">{{movie.title}}</div>
+          </div>
+    </ngx-slick-carousel>
+
+  </div>
+  <div class="carrusel-popular">
+    <h1 style="font-weight: 600;">Now Playing</h1>
+    <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="slideConfig1"
+                          >
+          <div ngxSlickItem *ngFor="let movie of nowplayingmovies" class="slide">
+            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.backdrop_path}}" width="90%" height="230px"/>
+            <div class="movie-title">{{movie.title}}</div>
+          </div>
+    </ngx-slick-carousel>
+
+  </div>
+  <div class="carrusel-popular">
+    <h1 style="font-weight: 600;">Top Rated</h1>
+    <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="slideConfig1"
+                          >
+          <div ngxSlickItem *ngFor="let movie of topratedmovies" class="slide">
+            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.backdrop_path}}" width="90%" height="230px"/>
+            <div class="movie-title">{{movie.title}}</div>
+          </div>
+    </ngx-slick-carousel>
+
+  </div>
+  <div class="carrusel-popular">
+    <h1 style="font-weight: 600;">Upcoming</h1>
+    <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="slideConfig1"
+                          >
+          <div ngxSlickItem *ngFor="let movie of upcomingmovies" class="slide">
+            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.backdrop_path}}" width="90%" height="230px"/>
+            <div class="movie-title">{{movie.title}}</div>
+          </div>
+    </ngx-slick-carousel>
+
+  </div>
+
+
+
+  </div>
+
+</section>
