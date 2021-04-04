@@ -1,17 +1,29 @@
 <section class="container">
-  <div class="movie-cont width-80">
-    <div class="img" >
-      <img src="https://image.tmdb.org/t/p/w780{{peli.poster_path}}" width="100%"/>
-    </div>
-    <div class="info">
-      <h1>{{peli.title}}({{peli.release_date.getFullYear}})</h1>
-      {{peli.release_date}}
-      <p>{{peli.overview}}</p>
-      <div class="d-flex">
-        <div *ngFor="let g of peli.genres">{{g.name}} </div>
-
+  <div
+    class="width-100 back"
+    [style.background-image]="'url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces' +peli.backdrop_path + ')'">
+    <div class="width-100 bg-c">
+      <div class="movie-cont width-80" *ngIf="peli">
+        <div class="img">
+          <img
+            src="https://image.tmdb.org/t/p/w780{{ peli.poster_path }}"
+            width="250px"
+            height="400px"
+          />
+        </div>
+        <div class="info">
+          <h1>{{ peli.title }}</h1>
+          <span>{{ peli.release_date }}</span> <span>{{ runtime }}</span>
+          <h1>Overview</h1>
+          <p>{{ peli.overview }}</p>
+          <div>
+            <h1>Genres</h1>
+            <ul>
+              <li *ngFor="let g of peli.genres">{{ g.name }}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
 </section>

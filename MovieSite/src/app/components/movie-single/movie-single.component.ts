@@ -14,6 +14,7 @@ export class MovieSingleComponent implements OnInit {
 
   id: string='';
   peli: SingleMovie;
+  runtime='';
 
   constructor(private movieSvc: MoviesService, private route: ActivatedRoute) { }
 
@@ -25,6 +26,14 @@ export class MovieSingleComponent implements OnInit {
       let sub = this.movieSvc.getMovieId(this.id).subscribe((response)=>{
         sub.unsubscribe();
         this.peli= response;
+        if(this.peli.runtime%60<10){
+          this.runtime= Math.trunc(this.peli.runtime/60).toString()+':0'+(this.peli.runtime%60).toString();
+        }
+        else{
+          this.runtime= Math.trunc(this.peli.runtime/60).toString()+':'+(this.peli.runtime%60).toString();
+        }
+
+
         console.log(this.peli);
 
       });

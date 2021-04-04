@@ -16,7 +16,8 @@ export class HomeComponent implements OnInit {
   upcomingmovies: Movie[]=[];
   banerimage = '';
   slides: any[]=[];
-  slideConfig = {'slidesToShow': 1, 'slidesToScroll': 1, 'infinite' : true, autoplay: true, autoplaySpeed: 7000,fade: true,};
+  slideConfig = {'slidesToShow': 1, 'slidesToScroll': 1, 'infinite' : true, autoplay: true, autoplaySpeed: 7000,fade: true,prevArrow: '<a type="button" class="slick-prev bot-p"><mat-icon>home</mat-icon></a>',
+  nextArrow: '<a type="button" class="slick-next bot-n"><mat-icon>home</mat-icon></a>',};
   slideConfig1 = {'slidesToShow': 5, 'slidesToScroll': 3, 'infinite' : false};
 
   constructor(private movieSvc: MoviesService) {

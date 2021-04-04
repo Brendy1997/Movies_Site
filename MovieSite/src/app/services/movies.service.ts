@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Genre } from '../class/genre';
 import { Movie } from '../class/movie';
 import { Moviearray } from '../class/moviearray';
+import { SingleMovie } from '../class/single-movie';
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +36,8 @@ export class MoviesService {
     return this.http.get<any>(environment.endpoints.baseUrl+environment.endpoints.genre,opts);
    }
 
-   getMovieId(id:string): Observable<Movie>{
+   getMovieId(id:string): Observable<SingleMovie>{
     const opts = { params: new HttpParams({fromString: 'api_key=c128aa2170b19b126c3e82f424296617'}) };
-    return this.http.get<any>(environment.endpoints.baseUrl+environment.endpoints.movie+id,opts);
+    return this.http.get<SingleMovie>(environment.endpoints.baseUrl+environment.endpoints.movie+id,opts);
    }
 }

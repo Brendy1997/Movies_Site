@@ -1,6 +1,9 @@
 .container{
   display: flex;
   justify-content: center;
+  background-color: #212121;
+  color: #c2185b;
+
 }
 
 .carrusel-cont{
@@ -19,7 +22,7 @@
   width: 100%;
   height: 500px;
   background-size: cover;
-  background-position: top center;
+  background-position:top center;
   background-repeat: no-repeat;
   color: white;
   display: flex;
@@ -73,4 +76,14 @@ button.slick-prev.slick-arrow .slick-prev::before{
   width: 80%;
   font-weight: 600;
   text-align: center;
+}
+
+.slick-prev::before, .slick-next::before {
+	font-family: "slick";
+	font-size: 20px;
+	line-height: 1;
+	color: #130340 !important;
+	opacity: 0.75;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
