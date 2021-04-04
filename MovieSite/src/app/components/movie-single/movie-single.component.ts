@@ -27,10 +27,10 @@ export class MovieSingleComponent implements OnInit {
         sub.unsubscribe();
         this.peli= response;
         if(this.peli.runtime%60<10){
-          this.runtime= Math.trunc(this.peli.runtime/60).toString()+':0'+(this.peli.runtime%60).toString();
+          this.runtime= Math.trunc(this.peli.runtime/60).toString()+'h '+(this.peli.runtime%60).toString()+'m';
         }
         else{
-          this.runtime= Math.trunc(this.peli.runtime/60).toString()+':'+(this.peli.runtime%60).toString();
+          this.runtime= Math.trunc(this.peli.runtime/60).toString()+'h '+(this.peli.runtime%60).toString()+'m';
         }
 
 

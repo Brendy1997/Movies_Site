@@ -21,6 +21,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 const MaterialComponents = [
@@ -44,7 +45,8 @@ const MaterialComponents = [
   MatBadgeModule,
   MatTableModule,
   MatPaginatorModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatTooltipModule
 
 
 ];
