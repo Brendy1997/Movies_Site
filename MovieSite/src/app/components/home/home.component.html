@@ -28,7 +28,7 @@
                           [config]="slideConfig1"
                           >
           <div ngxSlickItem *ngFor="let movie of popularmovies" class="slide">
-            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.poster_path}}" width="90%" height="250px"/>
+            <img class="img-mod slide-br" src="https://image.tmdb.org/t/p/w780{{movie.poster_path}}" width="90%" height="250px"  routerLink="/movie/{{movie.title}}/{{movie.id}}"/>
             <div class="movie-title">{{movie.title}}</div>
           </div>
     </ngx-slick-carousel>
@@ -41,7 +41,7 @@
                           [config]="slideConfig1"
                           >
           <div ngxSlickItem *ngFor="let movie of nowplayingmovies" class="slide">
-            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.poster_path}}" width="90%" height="250px"/>
+            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.poster_path}}" width="90%" height="250px" routerLink="/movie/{{movie.title}}/{{movie.id}}"/>
             <div class="movie-title">{{movie.title}}</div>
           </div>
     </ngx-slick-carousel>
@@ -54,7 +54,7 @@
                           [config]="slideConfig1"
                           >
           <div ngxSlickItem *ngFor="let movie of topratedmovies" class="slide">
-            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.poster_path}}" width="90%" height="250px"/>
+            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.poster_path}}" width="90%" height="250px" routerLink="/movie/{{movie.title}}/{{movie.id}}"/>
             <div class="movie-title">{{movie.title}}</div>
           </div>
     </ngx-slick-carousel>
@@ -67,7 +67,7 @@
                           [config]="slideConfig1"
                           >
           <div ngxSlickItem *ngFor="let movie of upcomingmovies" class="slide">
-            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.poster_path}}" width="90%" height="250px"/>
+            <img class="img-mod" src="https://image.tmdb.org/t/p/w780{{movie.poster_path}}" width="90%" height="250px" routerLink="/movie/{{movie.title}}/{{movie.id}}"/>
             <div class="movie-title">{{movie.title}}</div>
           </div>
     </ngx-slick-carousel>
