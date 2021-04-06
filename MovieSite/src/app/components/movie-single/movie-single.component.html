@@ -1,5 +1,6 @@
-<section class="container">
-  <div *ngIf="peli"
+<section class="container" *ngIf="peli">
+<div class="cargando" *ngIf="isLoadingResults"> <mat-spinner ></mat-spinner></div>
+  <div
     class="width-100 back"
     [style.background-image]="'url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces' +peli.backdrop_path + ')'">
     <div class="width-100 bg-c">
@@ -42,7 +43,47 @@
       </div>
     </div>
   </div>
-  <div class="related-movie">
 
+  <div class="carrusel-actors" >
+    <div class="actors-cont">
+    <h1 style="font-weight: 600;">Top Billed Cast</h1>
+    <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="slideConfig1"
+                          >
+          <div ngxSlickItem *ngFor="let actor of peli.credits.cast" class="slide">
+            <mat-card>
+              <img mat-card-image class="img-mod" src="https://image.tmdb.org/t/p/w138_and_h175_face{{actor.profile_path}}"  width="90%" height="200px" />
+
+              <mat-card-content class="act">
+              <div class="movie-title">Character: {{actor.character}}</div>
+              <div class="movie-title"><b>{{actor.name}}</b></div>
+            </mat-card-content>
+            </mat-card>
+
+          </div>
+    </ngx-slick-carousel>
   </div>
+  </div>
+  <div class="related-movie">
+    <div class="related-cont">
+    <h1 style="font-weight: 600;">Similar Movies</h1>
+    <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="slideConfig"
+                          >
+          <div ngxSlickItem *ngFor="let movies of relatedMovies" class="slide">
+            <mat-card routerLink="/movie/{{movies.title}}/{{movies.id}}">
+              <img mat-card-image class="img-mod" src="https://image.tmdb.org/t/p/w780{{movies.poster_path}}"  width="90%" height="200px" />
+
+              <mat-card-content class="rel">
+              <div class="movie-title"><b>{{movies.title}}</b></div>
+
+            </mat-card-content>
+            </mat-card>
+
+          </div>
+    </ngx-slick-carousel>
+  </div>
+</div>
 </section>

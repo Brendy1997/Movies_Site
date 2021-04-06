@@ -16,6 +16,9 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MovieSingleComponent } from './components/movie-single/movie-single.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
+import { BygenresComponent } from './components/bygenres/bygenres.component';
 
 
 @NgModule({
@@ -25,6 +28,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     ToolbarComponent,
     MoviesComponent,
     MovieSingleComponent,
+    SearchComponent,
+    BygenresComponent,
 
   ],
   imports: [
@@ -35,7 +40,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     UserModule,
     HttpClientModule,
     MatCarouselModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

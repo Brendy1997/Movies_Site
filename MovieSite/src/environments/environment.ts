@@ -15,6 +15,10 @@ export const environment = {
     upcoming: 'movie/upcoming',
     genre: 'genre/movie/list',
     movie: 'movie/',
+    discover: 'discover/movie',
+    search: '/search/keyword',
+    searchidkey: '/keyword',
+
 
   }
 };

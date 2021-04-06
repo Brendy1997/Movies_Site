@@ -19,14 +19,14 @@
       <mat-icon>list</mat-icon> Genres
     </a>
     <mat-menu #genre="matMenu">
-        <button mat-menu-item *ngFor="let gen of genres" routerLink="/movies/{{gen.id}}">{{gen.name}}</button>
+        <button mat-menu-item *ngFor="let gen of genres" routerLink="/genre/{{gen.id}}">{{gen.name}}</button>
     </mat-menu>
 
 
      <span class="spacer"></span>
      <div class="search">
-      <input type="text" placeholder="search..." />
-      <button mat-raised-button><mat-icon>search</mat-icon></button>
+      <input type="text" placeholder="search" [(ngModel)]="search_string" />
+      <button mat-raised-button (click)="search()"><mat-icon>search</mat-icon></button>
     </div>
 
   </mat-toolbar-row>
